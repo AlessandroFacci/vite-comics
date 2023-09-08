@@ -6,52 +6,52 @@ export default {
         {
           text: "CHARACTERS",
           url: "#",
-          current: "false",
+          current: false,
         },
         {
           text: "COMICS",
           url: "#",
-          current: "false",
+          current: true,
         },
         {
           text: "MOVIES",
           url: "#",
-          current: "false",
+          current: false,
         },
         {
           text: "TV",
           url: "#",
-          current: "false",
+          current: false,
         },
         {
           text: "GAMES",
           url: "#",
-          current: "false",
+          current: false,
         },
         {
           text: "COLLECTIBLES",
           url: "#",
-          current: "false",
+          current: false,
         },
         {
           text: "VIDEOS",
           url: "#",
-          current: "false",
+          current: false,
         },
         {
           text: "FANS",
           url: "#",
-          current: "false",
+          current: false,
         },
         {
           text: "NEWS",
           url: "#",
-          current: "false",
+          current: false,
         },
         {
           text: "SHOP",
           url: "#",
-          current: "false",
+          current: false,
         },
       ],
     };
@@ -63,7 +63,9 @@ export default {
   <header>
     <ul>
       <li v-for="link in links">
-        <a :href="link.url"> {{ link.text }}</a>
+        <a :href="link.url" :class="link.current ? 'current' : ''">
+          {{ link.text }}</a
+        >
       </li>
     </ul>
   </header>
