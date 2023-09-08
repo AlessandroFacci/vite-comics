@@ -61,7 +61,7 @@ export default {
 
 <template>
   <header>
-    <img src="../../public/img/dc-logo.png" alt="" />
+    <img src="../../public/img/dc-logo.png" alt="dc-logo" />
 
     <ul>
       <li v-for="link in links">
