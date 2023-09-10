@@ -19,4 +19,9 @@ export default {
 
 <style lang="scss">
 @use "./styles/general.scss" as *;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 </style>
