@@ -61,16 +61,41 @@ export default {
 
 <template>
   <header>
-    <img src="../../public/img/dc-logo.png" alt="dc-logo" />
-
-    <ul>
-      <li v-for="link in links">
-        <a :href="link.url" :class="link.current ? 'current' : ''">
-          {{ link.text }}</a
-        >
-      </li>
-    </ul>
+    <div>
+      <img src="../../public/img/dc-logo.png" alt="dc-logo" />
+    </div>
+    <div>
+      <ul>
+        <li v-for="link in links">
+          <a :href="link.url" :class="link.current ? 'current' : ''">
+            {{ link.text }}</a
+          >
+        </li>
+      </ul>
+    </div>
   </header>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+header {
+  padding: 1rem 0;
+  display: flex;
+  justify-content: space-around;
+  ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    li {
+      padding: 0 1rem;
+      a {
+        text-decoration: none;
+        color: black;
+      }
+    }
+  }
+}
+
+li .current {
+  border-bottom: 4px solid blue;
+}
+</style>
