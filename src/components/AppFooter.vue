@@ -4,11 +4,31 @@ export default {
     return {
       underText: 0,
       imgLinks: [
-        "../../public/img/buy-comics-digital-comics.png",
-        "../../public/img/buy-comics-merchandise.png",
-        "../../public/img/buy-comics-subscriptions.png",
-        "../../public/img/buy-comics-shop-locator.png",
-        "../../public/img/buy-dc-power-visa.svg",
+        {
+          link: "../../public/img/buy-comics-digital-comics.png",
+          url: '#',
+          text: "DIGITAL COMICS"
+        },
+        {
+          link: "../../public/img/buy-comics-merchandise.png",
+          url: '#',
+          text: "DC MERCHANDISE"
+        },
+        {
+          link: "../../public/img/buy-comics-subscriptions.png",
+          url: '#',
+          text: "SUBSCRIPTION"
+        },
+        {
+          link: "../../public/img/buy-comics-shop-locator.png",
+          url: '#',
+          text: "COMIC SHOP LOCATOR"
+        },
+        {
+          link: "../../public/img/buy-dc-power-visa.svg",
+          url: '#',
+          text: "DC POWER VISA"
+        },  
       ],
       infoLinks: [
         {
@@ -139,23 +159,26 @@ export default {
       socialLinks: [
         {
           link: "../../public/img/footer-facebook.png",
-          url: '#'
+          url: '#',
         },
         {
           link: "../../public/img/footer-twitter.png",
-          url: '#'
+          url: '#',
+          
         },
         {
           link: "../../public/img/footer-youtube.png",
-          url: '#'
+          url: '#',
+          
         },
         {
           link: "../../public/img/footer-pinterest.png",
-          url: '#'
+          url: '#',
+          
         },
         {
           link: "../../public/img/footer-periscope.png",
-          url: '#'
+          url: '#',
         }
       ]
     };
@@ -164,8 +187,17 @@ export default {
 };
 </script>
 <template>
-  <section>
-    <img :src="imgLinks[0]" alt="img">
+  <section class="img-section">
+    <div  v-for="img in imgLinks">
+      <a :href="img.url">
+        <div>
+          <img :src="img.link" alt="img">
+        </div>
+        <div>
+          <p>{{ img.text }}</p>
+        </div>
+      </a>
+    </div>
   </section>
   <section class="info-link">
     <!-- <img src="../../public/img/dc-logo-bg.png" alt=""> -->
@@ -195,12 +227,31 @@ export default {
   </section>
 </template>
 <style lang="scss" scoped>
-img{
-  background-color: black;
+.img-section{
+  width: 100%;
+  height: 200px;
+  background-color: #0082f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    a{
+      text-decoration: none;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 1.5rem;
+      img {
+        width: 60px;
+      }
+      p {padding: 1rem;
+      }
+    }
 }
 .info-link{
   background-image: url(../../public/img/footer-bg.jpg);
-  
 }
+
+
  
 </style>
