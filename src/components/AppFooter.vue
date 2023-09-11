@@ -6,29 +6,29 @@ export default {
       imgLinks: [
         {
           link: "../../public/img/buy-comics-digital-comics.png",
-          url: '#',
-          text: "DIGITAL COMICS"
+          url: "#",
+          text: "DIGITAL COMICS",
         },
         {
           link: "../../public/img/buy-comics-merchandise.png",
-          url: '#',
-          text: "DC MERCHANDISE"
+          url: "#",
+          text: "DC MERCHANDISE",
         },
         {
           link: "../../public/img/buy-comics-subscriptions.png",
-          url: '#',
-          text: "SUBSCRIPTION"
+          url: "#",
+          text: "SUBSCRIPTION",
         },
         {
           link: "../../public/img/buy-comics-shop-locator.png",
-          url: '#',
-          text: "COMIC SHOP LOCATOR"
+          url: "#",
+          text: "COMIC SHOP LOCATOR",
         },
         {
           link: "../../public/img/buy-dc-power-visa.svg",
-          url: '#',
-          text: "DC POWER VISA"
-        },  
+          url: "#",
+          text: "DC POWER VISA",
+        },
       ],
       infoLinks: [
         {
@@ -159,43 +159,37 @@ export default {
       socialLinks: [
         {
           link: "../../public/img/footer-facebook.png",
-          url: '#',
+          url: "#",
         },
         {
           link: "../../public/img/footer-twitter.png",
-          url: '#',
-          
+          url: "#",
         },
         {
           link: "../../public/img/footer-youtube.png",
-          url: '#',
-          
+          url: "#",
         },
         {
           link: "../../public/img/footer-pinterest.png",
-          url: '#',
-          
+          url: "#",
         },
         {
           link: "../../public/img/footer-periscope.png",
-          url: '#',
-        }
-      ]
+          url: "#",
+        },
+      ],
     };
   },
- 
 };
 </script>
 
-   
 <template>
-
   <!-- first section -->
   <section class="img-section">
-    <div  v-for="img in imgLinks">
+    <div v-for="img in imgLinks">
       <a :href="img.url">
         <div>
-          <img :src="img.link" alt="img">
+          <img :src="img.link" alt="img" />
         </div>
         <div>
           <p>{{ img.text }}</p>
@@ -209,10 +203,12 @@ export default {
     <!-- <img src="../../public/img/dc-logo-bg.png" alt=""> -->
     <ul>
       <li v-for="link in infoLinks">
-        <a class="title-link"  :href="link.url">{{ link.text }}</a>
-          <li> 
-            <a class="under-link">{{ link.underLink[underText].text }}</a>
+        <a class="title-link" :href="link.url">{{ link.text }}</a>
+        <ul>
+          <li v-for="underLink in link.underLink">
+            <a class="under-link">{{ underLink.text }}</a>
           </li>
+        </ul>
       </li>
     </ul>
   </section>
@@ -227,42 +223,41 @@ export default {
         <li><a href="#">FOLLOW US</a></li>
         <li v-for="img in socialLinks">
           <a :href="img.url">
-            <img :src="img.link" alt="social">
+            <img :src="img.link" alt="social" />
           </a>
-      </li>
+        </li>
       </ul>
     </div>
   </section>
 </template>
 
-
 <style lang="scss" scoped>
-
-// first section  
-.img-section{
+// first section
+.img-section {
   width: 100%;
   height: 200px;
   background-color: #0082f9;
   display: flex;
   justify-content: center;
   align-items: center;
-    a{
-      text-decoration: none;
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 0 1.5rem;
-      img {
-        width: 60px;
-      }
-      p {padding: 1rem;
-      }
+  a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1.5rem;
+    img {
+      width: 60px;
     }
+    p {
+      padding: 1rem;
+    }
+  }
 }
 
 // second section
-.info-section{
+.info-section {
   background-image: url(../../public/img/footer-bg.jpg);
   background-size: cover;
   width: 100%;
@@ -270,15 +265,13 @@ export default {
   a {
     text-decoration: none;
   }
-.title-link{
-  color: white; 
-}
+  .title-link {
+    color: white;
+  }
 
-.under-link{
-  color: gray;
-}
-
-  
+  .under-link {
+    color: gray;
+  }
 }
 
 // third section
