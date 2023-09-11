@@ -205,7 +205,7 @@ export default {
   </section>
 
   <!-- second section -->
-  <section class="info-link">
+  <section class="info-section">
     <!-- <img src="../../public/img/dc-logo-bg.png" alt=""> -->
     <ul>
       <li v-for="link in infoLinks">
@@ -218,7 +218,7 @@ export default {
   </section>
 
   <!-- third section -->
-  <section>
+  <section class="social-section">
     <div>
       <button>SIGN-UP NOW</button>
     </div>
@@ -262,8 +262,9 @@ export default {
 }
 
 // second section
-.info-link{
+.info-section{
   background-image: url(../../public/img/footer-bg.jpg);
+  background-size: cover;
   width: 100%;
   height: 500px;
   a {
@@ -278,5 +279,35 @@ export default {
 }
 
   
+}
+
+// third section
+
+.social-section {
+  width: 100%;
+  height: 100px;
+  background-color: #303030;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  button {
+    color: white;
+    background-color: #303030;
+    padding: 0.8rem 1rem;
+    border: 3px solid #0b78ec;
+  }
+  ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    li {
+      padding: 0 1rem;
+      a {
+        text-decoration: none;
+        color: #0b78ec;
+      }
+    }
+  }
 }
 </style>
