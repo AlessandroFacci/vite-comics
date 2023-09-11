@@ -200,15 +200,17 @@ export default {
 
   <!-- second section -->
   <section class="info-section">
-    <!-- <img src="../../public/img/dc-logo-bg.png" alt=""> -->
+    <img src="../../public/img/dc-logo-bg.png" alt="" />
     <ul>
       <li v-for="link in infoLinks">
-        <a class="title-link" :href="link.url">{{ link.text }}</a>
-        <ul>
-          <li v-for="underLink in link.underLink">
-            <a class="under-link">{{ underLink.text }}</a>
-          </li>
-        </ul>
+        <div>
+          <a class="title-link" :href="link.url">{{ link.text }}</a>
+          <ul>
+            <li v-for="underLink in link.underLink">
+              <a class="under-link">{{ underLink.text }}</a>
+            </li>
+          </ul>
+        </div>
       </li>
     </ul>
   </section>
@@ -262,15 +264,29 @@ export default {
   background-size: cover;
   width: 100%;
   height: 500px;
-  a {
-    text-decoration: none;
-  }
-  .title-link {
-    color: white;
+  position: relative;
+  overflow: hidden;
+
+  img {
+    position: absolute;
+    width: 700px;
+    right: 16rem;
+    bottom: -4rem;
   }
 
-  .under-link {
-    color: gray;
+  ul {
+    list-style-type: none;
+
+    a {
+      text-decoration: none;
+    }
+    .title-link {
+      color: white;
+    }
+
+    .under-link {
+      color: gray;
+    }
   }
 }
 
@@ -288,6 +304,7 @@ export default {
     background-color: #303030;
     padding: 0.8rem 1rem;
     border: 3px solid #0b78ec;
+    cursor: pointer;
   }
   ul {
     list-style-type: none;
