@@ -97,31 +97,53 @@ export default {
 <template>
   <main>
     <div class="hero"></div>
-    <div class="container">
-      <CardProduct
-        v-for="(movie, index) in movies"
-        :movie="movie"
-        :key="index"
-      ></CardProduct>
+    <div class="main-content">
+      <div class="container">
+        <CardProduct
+          v-for="(movie, index) in movies"
+          :movie="movie"
+          :key="index"
+        ></CardProduct>
+      </div>
+      <div>
+        <button>LOAD MORE</button>
+      </div>
     </div>
   </main>
 </template>
 
 <style lang="scss" scoped>
 main {
-  height: 900px;
+  height: 1000px;
   background-color: #1c1c1c;
+
   .hero {
     height: 40%;
     background-image: url(../../public/img/jumbotron.jpg);
     background-size: cover;
   }
-  .container {
-    width: 1180px;
-    height: 100%;
-    margin: 0 auto;
+
+  .main-content {
     display: flex;
-    flex: wrap;
+    flex-direction: column;
+    align-items: center;
+
+    .container {
+      width: 1180px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1%;
+      margin-top: 2rem;
+    }
+    button {
+      background-color: #0282f9;
+      padding: 0.5rem 2.5rem;
+      color: white;
+      border: none;
+      margin-top: 2.5rem;
+      cursor: pointer;
+    }
   }
 }
 </style>
