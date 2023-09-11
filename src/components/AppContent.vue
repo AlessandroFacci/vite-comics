@@ -1,20 +1,22 @@
 <script>
 export default {};
 </script>
+
 <template>
   <main>
-    <h1>Content</h1>
+    <div class="hero"></div>
+    <div></div>
   </main>
 </template>
+
 <style lang="scss" scoped>
 main {
-  height: 10rem;
-  background-color: black;
-  display: flex;
-  align-items: center;
-  h1 {
-    color: white;
-    padding: 0 1rem;
+  height: 900px;
+  background-color: #1c1c1c;
+  .hero {
+    height: 40%;
+    background-image: url(../../public/img/jumbotron.jpg);
+    background-size: cover;
   }
 }
 </style>
