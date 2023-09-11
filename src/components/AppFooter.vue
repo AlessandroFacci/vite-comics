@@ -186,7 +186,11 @@ export default {
  
 };
 </script>
+
+   
 <template>
+
+  <!-- first section -->
   <section class="img-section">
     <div  v-for="img in imgLinks">
       <a :href="img.url">
@@ -199,17 +203,21 @@ export default {
       </a>
     </div>
   </section>
+
+  <!-- second section -->
   <section class="info-link">
     <!-- <img src="../../public/img/dc-logo-bg.png" alt=""> -->
     <ul>
       <li v-for="link in infoLinks">
-        <a :href="link.url">{{ link.text }}</a>
+        <a class="title-link"  :href="link.url">{{ link.text }}</a>
           <li> 
-            <a>{{ link.underLink[underText].text }}</a>
+            <a class="under-link">{{ link.underLink[underText].text }}</a>
           </li>
       </li>
     </ul>
   </section>
+
+  <!-- third section -->
   <section>
     <div>
       <button>SIGN-UP NOW</button>
@@ -226,7 +234,11 @@ export default {
     </div>
   </section>
 </template>
+
+
 <style lang="scss" scoped>
+
+// first section  
 .img-section{
   width: 100%;
   height: 200px;
@@ -248,10 +260,23 @@ export default {
       }
     }
 }
+
+// second section
 .info-link{
   background-image: url(../../public/img/footer-bg.jpg);
+  width: 100%;
+  height: 500px;
+  a {
+    text-decoration: none;
+  }
+.title-link{
+  color: white; 
 }
 
+.under-link{
+  color: gray;
+}
 
- 
+  
+}
 </style>
